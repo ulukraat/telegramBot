@@ -8,7 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @RestController
-@RequestMapping("/webhook")
+@RequestMapping("/")
 public class WebhookController {
     private static final Logger logger = LoggerFactory.getLogger(WebhookController.class);
     private final TelegramBot telegramBot;
@@ -24,11 +24,6 @@ public class WebhookController {
         return ResponseEntity.ok("OK");
     }
 
-    @PostMapping("/webhook")
-    public ResponseEntity<String> onRawUpdateReceived(@RequestBody String updateJson) {
-        System.out.println("Получено обновление в JSON: " + updateJson);
-        return ResponseEntity.ok("OK");
-    }
     @GetMapping("/")
     public ResponseEntity<String> healthCheck() {
         return ResponseEntity.ok("Бот работает!");
