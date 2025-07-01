@@ -87,7 +87,7 @@ public class TelegramBot extends TelegramLongPollingBot {
             log.info("Пожелание отправлено");
         }
     }
-    @Scheduled(cron = "0 0 12 * * ?", zone = "Asia/Bishkek")
+    @Scheduled(cron = "0 0 23 * * ?", zone = "Asia/Bishkek")
     public void sendNightWishes(){
         List<String> nWishes = repository.getNightWish();
         if (nWishes.isEmpty()) {
